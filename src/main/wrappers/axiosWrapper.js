@@ -1,4 +1,4 @@
-import { createDefensivePromise } from './../utils/createDefensivePromise'
+import createDefensivePromise from './../utils/createDefensivePromise'
 
 /**
  * A wrapper for the axios http library
