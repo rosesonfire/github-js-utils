@@ -1,31 +1,34 @@
-import { describe, before, it, getNestedProperty } from './setup'
+import { describe, before, it } from './setup'
 // unit
-import jsUtils from './../main'
-// sideEffects
-import createDefensivePromise from './../main/utils/createDefensivePromise'
-import axiosWrapper from './../main/wrappers/axiosWrapper'
+import { utils, wrappers } from './../main'
 
 describe('JsUtils', () => {
-  let expectedProperties
+  let
+    expectedUtilities,
+    expectedWrappers,
+    _utils,
+    _wrappers
 
   before(() => {
-    expectedProperties = [
-      {
-        name: 'utils.createDefensivePromise',
-        property: createDefensivePromise
-      },
-      {
-        name: 'wrappers.axiosWrapper',
-        property: axiosWrapper
-      }
-    ]
+    expectedUtilities = ['createDefensivePromise']
+    expectedWrappers = ['axiosWrapper']
+    _utils = utils
+    _wrappers = wrappers
   })
 
   describe('When getting the utilities', () => {
-    it('should have expected properties', () =>
-      expectedProperties.forEach(({ name, property }) => {
-        jsUtils.should.have.nested.property(name)
-        getNestedProperty(jsUtils, name).should.equal(property)
+    it('should have expected utilities', () =>
+      expectedUtilities.forEach(utils => {
+        _utils.should.have.property(utils)
+        _utils[utils].should.be.a('function')
+      }))
+  })
+
+  describe('When getting the wrappers', () => {
+    it('should have expected wrappers', () =>
+      expectedWrappers.forEach(wrapper => {
+        _wrappers.should.have.property(wrapper)
+        _wrappers[wrapper].should.be.a('function')
       }))
   })
 })
