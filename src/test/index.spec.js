@@ -19,15 +19,15 @@ describe('JsUtils', () => {
   describe('When getting the utilities', () => {
     it('should have expected utilities', () =>
       expectedUtilities.forEach(utils => {
-        _utils.should.have.property(utils)
-        _utils[utils].should.be.a('function')
+        _utils.should.have.own.property(utils)
+        _utils[utils].should.own.be.a('function')
       }))
   })
 
   describe('When getting the wrappers', () => {
     it('should have expected wrappers', () =>
       expectedWrappers.forEach(wrapper => {
-        _wrappers.should.have.property(wrapper)
+        _wrappers.should.have.own.property(wrapper)
         _wrappers[wrapper].should.be.a('function')
       }))
   })
