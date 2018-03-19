@@ -10,7 +10,7 @@ describe('JsUtils', () => {
     _wrappers
 
   before(() => {
-    expectedUtilities = ['createDefensivePromise']
+    expectedUtilities = ['createDefensivePromise', 'foldLeft']
     expectedWrappers = ['axiosWrapper']
     _utils = utils
     _wrappers = wrappers
