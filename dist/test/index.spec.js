@@ -21,7 +21,7 @@ var _main = require('./../main');
     (0, _setup.it)('should have expected utilities', function () {
       return expectedUtilities.forEach(function (utils) {
         _utils.should.have.own.property(utils);
-        _utils[utils].should.own.be.a('function');
+        _utils[utils].should.be.a('function');
       });
     });
   });

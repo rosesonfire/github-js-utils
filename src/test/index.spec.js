@@ -20,7 +20,7 @@ describe('JsUtils', () => {
     it('should have expected utilities', () =>
       expectedUtilities.forEach(utils => {
         _utils.should.have.own.property(utils)
-        _utils[utils].should.own.be.a('function')
+        _utils[utils].should.be.a('function')
       }))
   })
 
