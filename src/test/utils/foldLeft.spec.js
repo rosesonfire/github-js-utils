@@ -24,18 +24,18 @@ describe('FoldLeft', () => {
   })
 
   describe('When passing empty array', () => {
-    it('return the seed', () =>
+    it('should return the seed', () =>
       foldLeft(emptyArray, seed, reducerFunc).should.equal(seed))
   })
 
   describe('When passing array with single item', () => {
-    it('return fold properly', () =>
+    it('should return fold properly', () =>
       foldLeft(arrayWithSingleItem, seed, reducerFunc).should
         .equal(reductionWithSingleItem))
   })
 
   describe('When passing array with multiple items', () => {
-    it('return fold properly', () =>
+    it('should return fold properly', () =>
       foldLeft(arrayWithMultipleItems, seed, reducerFunc).should
         .equal(reductionWithMultipleItems))
   })
