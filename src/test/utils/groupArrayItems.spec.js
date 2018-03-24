@@ -45,6 +45,7 @@ describe('GroupArrayItems', () => {
     it('should fail', () => {
       try {
         groupArrayItems(arrayWithSevenItems, groupSize)
+        '1'.should.equal('2')
       } catch (e) {
         e.message.should.equal(groupIndivisibleErrorMsg)
       }
@@ -55,6 +56,7 @@ describe('GroupArrayItems', () => {
     it('should fail', () => {
       try {
         groupArrayItems(arrayWithSevenItems, zeroGroupSize)
+        '1'.should.equal('2')
       } catch (e) {
         e.message.should.equal(groupSizeZeroErrorMsg)
       }
@@ -65,6 +67,7 @@ describe('GroupArrayItems', () => {
     it('should fail', () => {
       try {
         groupArrayItems(arrayWithSevenItems, negativeGroupSize)
+        '1'.should.equal('2')
       } catch (e) {
         e.message.should.equal(groupSizeNegativeErrorMsg)
       }
