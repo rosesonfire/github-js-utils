@@ -10,7 +10,11 @@ describe('JsUtils', () => {
     _wrappers
 
   before(() => {
-    expectedUtilities = ['createDefensivePromise', 'foldLeft']
+    expectedUtilities = [
+      'createDefensivePromise',
+      'foldLeft',
+      'groupArrayItems'
+    ]
     expectedWrappers = ['axiosWrapper']
     _utils = utils
     _wrappers = wrappers
