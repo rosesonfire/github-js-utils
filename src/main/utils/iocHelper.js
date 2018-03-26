@@ -32,14 +32,14 @@ export default {
     const dependencyPaths = Object.values(dependencyConfig)
     const constructorArguments =
       Object.assign(Object.assign({}, configuration), dependencyInstances)
-    let newInstance = null
     // This is the module.exports of the caller
     // iocDependencyInstances is injected by electrolyte
     const callerModuleExports = (...iocDependencyInstances) => {
       dependencyNames.forEach((dependencyName, index) => {
         constructorArguments[dependencyName] = iocDependencyInstances[index]
       })
-      newInstance = instanceConstructor(constructorArguments)
+
+      const newInstance = instanceConstructor(constructorArguments)
 
       return newInstance
     }
