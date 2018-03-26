@@ -50,5 +50,21 @@ export default {
     callerModuleExports['@singleton'] = isSingleton
 
     return callerModuleExports
+  },
+  /**
+   * Helper method to get the configuration file
+   * @param {object} configFileOptions the configuration file options.
+   *  Structure:
+   *    {
+   *      'NODE_ENV value 1': 'relative path to configuration file 1',
+   *      'NODE_ENV value 2': 'relative path to configuration file 2',
+   *    }
+   * @param {string} defaultConfigFile the default config file if NODE_ENV
+   *  cannot resolve to a configuration file
+   */
+  getConfigFile: (configFileOptions, defaultConfigFile) => {
+    const env = process.env.NODE_ENV
+
+    return configFileOptions[env] || defaultConfigFile
   }
 }
